@@ -2,7 +2,7 @@
 <template>
   <div class="app-container">
     <el-link
-      href="https://gitee.com/youlaiorg/vue3-element-admin/blob/master/src/views/demo/auto-opreation-column.vue"
+      href="https://github.com/top-system/light-admin-ui/blob/master/src/views/demo/auto-opreation-column.vue"
       type="primary"
       target="_blank"
       class="mb-10"

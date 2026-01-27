@@ -44,7 +44,7 @@ Element.prototype.scrollIntoView = vi.fn();
 // Mock __APP_INFO__
 (globalThis as any).__APP_INFO__ = {
   pkg: {
-    name: "vue3-element-admin",
+    name: "light-admin-ui",
     version: "4.0.0",
   },
 };

@@ -1,13 +1,13 @@
-<!-- 列表选择器示�?-->
+<!-- 列表选择器示?-->
 <template>
   <div class="app-container">
     <el-link
-      href="https://gitee.com/youlaiorg/vue3-element-admin/blob/master/src/views/demo/table-select/index.vue"
+      href="https://github.com/top-system/light-admin-ui/blob/master/src/views/demo/table-select/index.vue"
       type="primary"
       target="_blank"
       class="mb-10"
     >
-      示例源码 请点�?>>>
+      示例源码 请点?>>>
     </el-link>
     <table-select :text="text" :select-config="selectConfig" @confirm-click="handleConfirm">
       <template #status="scope">

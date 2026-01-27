@@ -71,10 +71,10 @@
           <el-switch v-model="settingsStore.colorWeak" />
         </div>
 
-        <div class="config-item flex-x-between">
+        <!-- <div class="config-item flex-x-between">
           <span class="text-xs">AI 助手</span>
           <el-switch v-model="settingsStore.userEnableAi" />
-        </div>
+        </div> -->
 
         <div v-if="!isDark" class="config-item flex-x-between">
           <span class="text-xs">{{ t("settings.sidebarColorScheme") }}</span>

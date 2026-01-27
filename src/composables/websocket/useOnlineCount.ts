@@ -30,7 +30,7 @@ function createOnlineCountComposable() {
     connectionTimeout: 10000,
     useExponentialBackoff: true,
     autoRestoreSubscriptions: true, // 自动恢复订阅
-    debug: false,
+    debug: true,
   });
 
   // 在线用户计数主题

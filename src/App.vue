@@ -10,7 +10,7 @@
       <router-view />
 
       <!-- AI 助手 -->
-      <AiAssistant v-if="enableAiAssistant" />
+      <!-- <AiAssistant v-if="enableAiAssistant" /> -->
     </el-watermark>
   </el-config-provider>
 </template>
@@ -19,7 +19,7 @@
 import { useAppStore, useSettingsStore, useUserStore } from "@/store";
 import { appConfig } from "@/settings";
 import { ThemeMode, ComponentSize } from "@/enums";
-import AiAssistant from "@/components/AiAssistant/index.vue";
+// import AiAssistant from "@/components/AiAssistant/index.vue";
 
 const appStore = useAppStore();
 const settingsStore = useSettingsStore();

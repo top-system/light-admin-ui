@@ -1,8 +1,5 @@
 ﻿<template>
   <div class="dashboard-container">
-    <!-- github 角标 -->
-    <github-corner class="github-corner" />
-
     <el-card shadow="never" class="mt-2">
       <div class="flex flex-wrap">
         <!-- 左侧问候语区域 -->
@@ -17,101 +14,6 @@
           <div class="ml-5">
             <p>{{ greetings }}</p>
             <p class="text-sm text-gray">今日天气晴朗，气温在15℃至25℃之间，东南风。</p>
-          </div>
-        </div>
-
-        <!-- 右侧图标区域 - PC端-->
-        <div class="hidden sm:block">
-          <div class="flex items-end space-x-6">
-            <!-- 仓库 -->
-            <div>
-              <div class="font-bold color-#ff9a2e text-sm flex items-center">
-                <el-icon class="mr-2px"><Folder /></el-icon>
-                仓库
-              </div>
-              <div class="mt-3 whitespace-nowrap">
-                <el-link href="https://gitee.com/youlaiorg/vue3-element-admin" target="_blank">
-                  <div class="i-svg:gitee text-lg color-#F76560" />
-                </el-link>
-                <el-divider direction="vertical" />
-                <el-link href="https://github.com/youlaitech/vue3-element-admin" target="_blank">
-                  <div class="i-svg:github text-lg color-#4080FF" />
-                </el-link>
-                <el-divider direction="vertical" />
-                <el-link href="https://gitcode.com/youlai/vue3-element-admin" target="_blank">
-                  <div class="i-svg:gitcode text-lg color-#FF9A2E" />
-                </el-link>
-              </div>
-            </div>
-
-            <!-- 文档 -->
-            <div>
-              <div class="font-bold color-#4080ff text-sm flex items-center">
-                <el-icon class="mr-2px"><Document /></el-icon>
-                文档
-              </div>
-              <div class="mt-3 whitespace-nowrap">
-                <el-link href="https://juejin.cn/post/7228990409909108793" target="_blank">
-                  <div class="i-svg:juejin text-lg" />
-                </el-link>
-                <el-divider direction="vertical" />
-                <el-link
-                  href="https://youlai.blog.csdn.net/article/details/130191394"
-                  target="_blank"
-                >
-                  <div class="i-svg:csdn text-lg" />
-                </el-link>
-                <el-divider direction="vertical" />
-                <el-link href="https://www.cnblogs.com/haoxianrui/p/17331952.html" target="_blank">
-                  <div class="i-svg:cnblogs text-lg" />
-                </el-link>
-              </div>
-            </div>
-
-            <!-- 视频 -->
-            <div>
-              <div class="font-bold color-#f76560 text-sm flex items-center">
-                <el-icon class="mr-2px"><VideoCamera /></el-icon>
-                视频
-              </div>
-              <div class="mt-3 whitespace-nowrap">
-                <el-link href="https://www.bilibili.com/video/BV1eFUuYyEFj" target="_blank">
-                  <div class="i-svg:bilibili text-lg" />
-                </el-link>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 移动端图标区域-->
-        <div class="w-full sm:hidden mt-3">
-          <div class="flex justify-end space-x-4 overflow-x-auto">
-            <!-- 仓库图标 -->
-            <el-link href="https://gitee.com/youlaiorg/vue3-element-admin" target="_blank">
-              <div class="i-svg:gitee text-lg color-#F76560" />
-            </el-link>
-            <el-link href="https://github.com/youlaitech/vue3-element-admin" target="_blank">
-              <div class="i-svg:github text-lg color-#4080FF" />
-            </el-link>
-            <el-link href="https://gitcode.com/youlai/vue3-element-admin" target="_blank">
-              <div class="i-svg:gitcode text-lg color-#FF9A2E" />
-            </el-link>
-
-            <!-- 文档图标 -->
-            <el-link href="https://juejin.cn/post/7228990409909108793" target="_blank">
-              <div class="i-svg:juejin text-lg" />
-            </el-link>
-            <el-link href="https://youlai.blog.csdn.net/article/details/130191394" target="_blank">
-              <div class="i-svg:csdn text-lg" />
-            </el-link>
-            <el-link href="https://www.cnblogs.com/haoxianrui/p/17331952.html" target="_blank">
-              <div class="i-svg:cnblogs text-lg" />
-            </el-link>
-
-            <!-- 视频图标 -->
-            <el-link href="https://www.bilibili.com/video/BV1eFUuYyEFj" target="_blank">
-              <div class="i-svg:bilibili text-lg" />
-            </el-link>
           </div>
         </div>
       </div>
@@ -299,7 +201,7 @@
               <el-link
                 type="primary"
                 underline="never"
-                href="https://gitee.com/youlaiorg/vue3-element-admin/releases"
+                href="https://github.com/top-system/light-admin-ui/releases"
                 target="_blank"
               >
                 完整记录
@@ -387,7 +289,7 @@ const formattedTime = computed(() => {
 
 interface VersionItem {
   id: string;
-  title: string; // 版本标题（如：v2.4.0）
+  title: string; // 版本标题（如：v1.4.0）
   date: string; // 发布时间
   content: string; // 版本描述
   link: string; // 详情链接
@@ -401,25 +303,9 @@ const vesionList = ref<VersionItem[]>([
   {
     id: "1",
     title: "v2.4.0",
-    date: "2021-09-01 00:00:00",
+    date: "2026-01-01 00:00:00",
     content: "实现基础框架搭建，包含权限管理、路由系统等核心功能。",
-    link: "https://gitee.com/youlaiorg/vue3-element-admin/releases",
-    tag: "里程碑",
-  },
-  {
-    id: "2",
-    title: "v2.4.0",
-    date: "2021-09-01 00:00:00",
-    content: "实现基础框架搭建，包含权限管理、路由系统等核心功能。",
-    link: "https://gitee.com/youlaiorg/vue3-element-admin/releases",
-    tag: "里程碑",
-  },
-  {
-    id: "3",
-    title: "v2.4.0",
-    date: "2021-09-01 00:00:00",
-    content: "实现基础框架搭建，包含权限管理、路由系统等核心功能。",
-    link: "https://gitee.com/youlaiorg/vue3-element-admin/releases",
+    link: "https://github.com/top-system/light-admin-ui/releases",
     tag: "里程碑",
   },
 ]);

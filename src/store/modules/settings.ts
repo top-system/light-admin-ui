@@ -30,8 +30,8 @@ export const useSettingsStore = defineStore("setting", () => {
   const grayMode = useStorage(STORAGE_KEYS.GRAY_MODE, false);
   const colorWeak = useStorage(STORAGE_KEYS.COLOR_WEAK, false);
 
-  // AI 助手：用户级开关（默认开启）
-  const userEnableAi = useStorage(STORAGE_KEYS.ENABLE_AI_ASSISTANT, true);
+  // AI 助手：用户级开关（默认关闭）
+  const userEnableAi = useStorage(STORAGE_KEYS.ENABLE_AI_ASSISTANT, false);
   const enableAiAssistant = computed(() => userEnableAi.value);
 
   // 主题变化监听
