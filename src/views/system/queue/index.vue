@@ -251,7 +251,7 @@ const handleOperateClick = async (data: IObject) => {
       const task = await QueueAPI.get(data.row.id);
       detailData.value = task;
       detailVisible.value = true;
-    } catch (error) {
+    } catch {
       ElMessage.error("获取任务详情失败");
     }
   }
@@ -318,9 +318,9 @@ onUnmounted(() => {
 }
 
 .stat-label {
+  margin-top: 4px;
   font-size: 14px;
   color: #606266;
-  margin-top: 4px;
 }
 
 .correlation-id {
@@ -329,19 +329,19 @@ onUnmounted(() => {
 }
 
 .error-text {
-  max-width: 200px;
   display: inline-block;
+  max-width: 200px;
 }
 
 .error-history {
   max-height: 200px;
+  padding: 8px;
   overflow-y: auto;
-  white-space: pre-wrap;
-  word-break: break-all;
   font-family: monospace;
   font-size: 12px;
+  word-break: break-all;
+  white-space: pre-wrap;
   background-color: #f5f7fa;
-  padding: 8px;
   border-radius: 4px;
 }
 

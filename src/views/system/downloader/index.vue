@@ -118,16 +118,6 @@
             placeholder="请输入下载链接（支持HTTP/HTTPS/FTP/磁力链接/种子文件URL）"
           />
         </el-form-item>
-        <el-form-item label="下载器" prop="downloader">
-          <el-select v-model="addForm.downloader" placeholder="请选择下载器" style="width: 100%">
-            <el-option
-              v-for="item in downloaderOptions"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            />
-          </el-select>
-        </el-form-item>
       </el-form>
       <template #footer>
         <el-button @click="addVisible = false">取消</el-button>
@@ -190,9 +180,7 @@
             </template>
           </el-table-column>
           <el-table-column prop="progress" label="进度" width="100" align="center">
-            <template #default="{ row }">
-              {{ row.progress.toFixed(1) }}%
-            </template>
+            <template #default="{ row }">{{ row.progress.toFixed(1) }}%</template>
           </el-table-column>
           <el-table-column prop="selected" label="已选择" width="80" align="center">
             <template #default="{ row }">
@@ -209,20 +197,13 @@
 
 <script setup lang="ts">
 import DownloaderAPI from "@/api/downloader";
-import type { DownloadTaskItem, DownloadTaskDetailVO, DownloadTaskStatsVO } from "@/api/downloader";
+import type { DownloadTaskDetailVO, DownloadTaskStatsVO } from "@/api/downloader";
 import type { IObject } from "@/components/CURD/types";
 import type { FormInstance, FormRules } from "element-plus";
 import usePage from "@/components/CURD/usePage";
 import contentConfig from "./config/content";
 import searchConfig from "./config/search";
-import {
-  statusTagType,
-  statusLabel,
-  downloaderOptions,
-  initOptions,
-  formatFileSize,
-  formatSpeed,
-} from "./config/options";
+import { statusTagType, statusLabel, formatFileSize, formatSpeed } from "./config/options";
 
 const {
   searchRef,
@@ -248,11 +229,9 @@ const addLoading = ref(false);
 const addFormRef = ref<FormInstance>();
 const addForm = ref({
   url: "",
-  downloader: "",
 });
 const addRules: FormRules = {
   url: [{ required: true, message: "请输入下载链接", trigger: "blur" }],
-  downloader: [{ required: true, message: "请选择下载器", trigger: "change" }],
 };
 
 // 详情弹窗
@@ -291,7 +270,7 @@ async function loadStats() {
 
 // 打开新增弹窗
 function handleAddClick() {
-  addForm.value = { url: "", downloader: "" };
+  addForm.value = { url: "" };
   addVisible.value = true;
 }
 
@@ -325,7 +304,7 @@ const handleOperateClick = async (data: IObject) => {
       const detail = await DownloaderAPI.get(data.row.id);
       detailData.value = detail;
       detailVisible.value = true;
-    } catch (error) {
+    } catch {
       ElMessage.error("获取任务详情失败");
     }
   } else if (data.name === "sync") {
@@ -361,7 +340,6 @@ const handleOperateClick = async (data: IObject) => {
 let refreshTimer: ReturnType<typeof setInterval> | null = null;
 
 onMounted(() => {
-  initOptions();
   loadStats();
 
   // 每10秒刷新一次（下载任务需要更频繁的刷新）
@@ -420,9 +398,9 @@ onUnmounted(() => {
 }
 
 .stat-label {
+  margin-top: 4px;
   font-size: 14px;
   color: #606266;
-  margin-top: 4px;
 }
 
 .task-name {
@@ -431,8 +409,8 @@ onUnmounted(() => {
 }
 
 .speed-active {
-  color: #409eff;
   font-weight: 500;
+  color: #409eff;
 }
 
 .url-text {
